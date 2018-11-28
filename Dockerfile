@@ -9,6 +9,7 @@ ADD activiti-realm.json /opt/jboss/keycloak/
 ENTRYPOINT [ "/opt/jboss/docker-entrypoint.sh" ]
 
 ENV PORT_OFFSET 100
+ENV DB_VENDOR=h2
 
 EXPOSE 8180 30081
 
