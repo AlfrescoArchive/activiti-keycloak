@@ -1,0 +1,7 @@
+github:
+  organisations:
+  - name: almerico
+    repositories:
+    - name: activiti-cloud-infrastructure-chart
+      useSinglePullRequest: true
+
