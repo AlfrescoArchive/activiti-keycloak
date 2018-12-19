@@ -68,4 +68,4 @@ endif
 
 updatebot/push-version: 	
 	@echo Doing updatebot push-version.....
-	updatebot push-version --kind helm $(RELEASE_ARTIFACT) $(RELEASE_VERSION)
+	cd ../.. && updatebot push-version --kind helm $(RELEASE_ARTIFACT) $(RELEASE_VERSION)
