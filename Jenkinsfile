@@ -32,12 +32,12 @@ pipeline {
       }
       stage('Build Release') {
         when {
-          branch 'master'
+          branch '7.0.x'
         }
         steps {
           container('maven') {
             // ensure we're not on a detached head
-            sh "git checkout master"
+            sh "git checkout 7.0.x"
             sh "git config --global credential.helper store"
 
             sh "jx step git credentials"
@@ -57,7 +57,7 @@ pipeline {
       }
       stage('Promote to Environments') {
         when {
-          branch 'master'
+          branch '7.0.x'
         }
         steps {
           container('maven') {
@@ -65,12 +65,12 @@ pipeline {
               sh 'jx step changelog --version v\$(cat ../../VERSION)'
 
               // release the helm chart
-              sh 'make release'
-              sh 'make github'  
+              //sh 'make release'
+              //sh 'make github'  
               // promote through all 'Auto' promotion Environments
               // sh 'jx promote -b --all-auto --timeout 1h --version \$(cat ../../VERSION) --no-wait'
-              sh 'jx step git credentials'
-              sh 'make updatebot/push-version'
+              //sh 'jx step git credentials'
+              //sh 'make updatebot/push-version'
 
             }
           }
