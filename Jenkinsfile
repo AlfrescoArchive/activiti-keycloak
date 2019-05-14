@@ -45,6 +45,7 @@ pipeline {
             sh "echo \$(jx-release-version) > VERSION"
            
             dir ("./charts/$APP_NAME") {
+              sh "make tag"  
               sh "make build"
             }
  

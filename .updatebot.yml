@@ -2,6 +2,5 @@ github:
   organisations:
   - name: activiti
     repositories:
-    - name: activiti-cloud-infrastructure-chart
+    - name: activiti-cloud-full-chart
       useSinglePullRequest: true
-
