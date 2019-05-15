@@ -6,7 +6,7 @@ keycloak:
         cpu: 1
         memory: "2048Mi"
       requests:
-        cpu: "150m"
+        cpu: "300m"
         memory: "512Mi"
     username: admin
     password: admin
