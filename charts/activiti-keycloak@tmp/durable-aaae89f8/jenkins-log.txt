@@ -1,0 +1,5 @@
++ make tag
+sed -i -e "s/version:.*/version: 0.0.25/" Chart.yaml
+sed -i -e "s|repository: .*|repository: 10.55.243.55:5000/activiti/activiti-keycloak|" values.yaml
+sed -i -e "s/tag: .*/tag: 0.0.25/" values.yaml
+git add --all
