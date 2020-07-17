@@ -1,12 +1,10 @@
-FROM jboss/keycloak:4.1.0.Final
+FROM jboss/keycloak:10.0.2
 MAINTAINER https://gitter.im/Activiti/Activiti7
 
 RUN /opt/jboss/keycloak/bin/add-user.sh -u admin -p admin
 RUN /opt/jboss/keycloak/bin/add-user-keycloak.sh -r master -u admin -p admin
 
 ADD activiti-realm.json /opt/jboss/keycloak/
-
-ENTRYPOINT [ "/opt/jboss/docker-entrypoint.sh" ]
 
 ENV PORT_OFFSET 100
 ENV DB_VENDOR=h2
